@@ -65,7 +65,11 @@ namespace BinarySearchTree
             parent = null;
             while ((currentnode != null) && (currentnode.info != element))
             {
-
+                parent = currentnode;
+                if (string.Compare(element, currentnode.info) < 0)
+                    currentnode = currentnode.rchild;
+                else
+                    currentnode = currentnode.lchild;
             }
         }
     }
